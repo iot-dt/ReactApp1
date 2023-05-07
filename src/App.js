@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <Navbar companyName="POCKET TEDDY"/>
+      <Navbar appName="Word Editor"/>
       <Textarea/>
     </>
   );
