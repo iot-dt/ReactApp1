@@ -16,6 +16,11 @@ export default memo(function Textarea() {
         let newText = text.split(" ").map(el => el.charAt(0).toUpperCase() + el.slice(1)).join(" ");
         setText(newText)
     }
+    const copyText = ()=> {
+        let textAreaElement = document.getElementById("exampleFormControlTextarea1");
+        textAreaElement.select();
+        navigator.clipboard.writeText(textAreaElement.value);
+    }
     const clearText = ()=>{
         setText("")
     }
@@ -40,6 +45,7 @@ export default memo(function Textarea() {
           <button className="btn btn-primary mx-3" onClick={changeToUppercase}>Change to Uppercase</button>
           <button className="btn btn-primary mx-3" onClick={changeToLowercase}>Change to Lowercase</button>
           <button className="btn btn-primary mx-3" onClick={capitalizeFirstLetter}>Capitalize First Letter</button>
+          <button className="btn btn-primary mx-3" onClick={copyText}>Copy text</button>
           <button className="btn btn-primary mx-3" onClick={clearText}>Clear Text</button>
         </div>
          <p className="my-2">word count = {text.split(" ").length}</p>
