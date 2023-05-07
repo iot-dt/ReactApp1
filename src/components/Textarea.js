@@ -55,6 +55,8 @@ export default memo(function Textarea() {
         </div>
          <p className="my-2">word count = {text.split(" ").length}</p>
          <p className="my-2">char count = {text.length}</p>
+         <h2 className="my-4">Preview</h2>
+         <p>{text.length>0 ? text : "Enter the text in text area above to preivew"}</p>
       </div>
     </>
   );
