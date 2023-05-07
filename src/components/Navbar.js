@@ -3,8 +3,8 @@ import React, { memo } from 'react'
 export default memo(function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
+      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+        <div className="container-fluid"> 
             <a className="navbar-brand" href="/"><strong>{props.appName}</strong></a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -18,10 +18,14 @@ export default memo(function Navbar(props) {
                     <a className="nav-link" href="/">About</a>
                     </li>
                 </ul>
-                <form className="d-flex" role="search">
+                <form className="d-flex mx-2" role="search">
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-success" type="submit">Search</button>
+                    <button className="btn btn-success mx-2" type="submit">Search</button>
                 </form>
+                <div className="form-check form-switch">
+                  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleMode}/>
+                  <label className="form-check-label" forHtml="flexSwitchCheckDefault">{props.setText}</label>
+                </div>
                 </div>
             </div>
         </nav>
