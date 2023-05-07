@@ -21,6 +21,10 @@ export default memo(function Textarea() {
         textAreaElement.select();
         navigator.clipboard.writeText(textAreaElement.value);
     }
+    const removeExtraSpace = ()=> {
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "))
+    }
     const clearText = ()=>{
         setText("")
     }
@@ -46,6 +50,7 @@ export default memo(function Textarea() {
           <button className="btn btn-primary mx-3" onClick={changeToLowercase}>Change to Lowercase</button>
           <button className="btn btn-primary mx-3" onClick={capitalizeFirstLetter}>Capitalize First Letter</button>
           <button className="btn btn-primary mx-3" onClick={copyText}>Copy text</button>
+          <button className="btn btn-primary mx-3" onClick={removeExtraSpace}>Remove Extra spaces</button>
           <button className="btn btn-primary mx-3" onClick={clearText}>Clear Text</button>
         </div>
          <p className="my-2">word count = {text.split(" ").length}</p>
