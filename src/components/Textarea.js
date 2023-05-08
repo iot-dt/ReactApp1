@@ -1,6 +1,20 @@
 import React, { memo, useState } from "react";
 
 export default memo(function Textarea(props) {
+  function spaceRemover(textToRemoveSpace){
+    let textArray = textToRemoveSpace.split(" ")
+    let count = 0
+    for ( let newText=0; newText< textArray.length; newText++) {
+      if (textArray[newText] === "" ) {
+        continue;
+      }
+      else{
+          count++;
+      }
+    }
+    return count
+  }
+
     const textAreaChanged = (event)=>{
         setText(event.target.value)
     }
@@ -59,7 +73,7 @@ export default memo(function Textarea(props) {
           <button className="btn btn-primary mx-3" onClick={removeExtraSpace}>Remove Extra spaces</button>
           <button className="btn btn-primary mx-3" onClick={clearText}>Clear Text</button>
         </div>
-         <p className="my-2">word count = {text==="" ? 0: text.split(" ").length}</p>
+         <p className="my-2">word count = { text === "" ? 0 : spaceRemover(text)}</p>
          <p className="my-2">char count = {text.length}</p>
          <h2 className="my-4">Preview</h2>
          <p>{text.length>0 ? text : "Enter the text in text area above to preivew"}</p>
@@ -67,3 +81,4 @@ export default memo(function Textarea(props) {
     </>
   );
 });
+
