@@ -21,32 +21,62 @@ export default memo(function Textarea(props) {
     const changeToUppercase = ()=>{
         let newText = text.toUpperCase();
         setText(newText);
+        if (text === ""){
+          props.showAlert("Please enter text first", "warning")
+        }
+        else{
         props.showAlert("Text is changed to Uppercase", "success")
+        }
     }
     const changeToLowercase = ()=>{
         let newText = text.toLowerCase();
         setText(newText); 
+        if (text === ""){
+          props.showAlert("Please enter text first", "warning")
+        }
+        else{
         props.showAlert("Text is changed to Lowercase", "success")
+        }
     }
     const capitalizeFirstLetter = ()=>{
         let newText = text.split(" ").map(el => el.charAt(0).toUpperCase() + el.slice(1)).join(" ");
         setText(newText);
+        if (text === ""){
+          props.showAlert("Please enter text first", "warning")
+        }
+        else{
         props.showAlert("Firt Letter of each word is Capitalized", "success")
+        }
     }
     const copyText = ()=> {
         let textAreaElement = document.getElementById("exampleFormControlTextarea1");
         textAreaElement.select();
         navigator.clipboard.writeText(textAreaElement.value);
+        if (text === ""){
+          props.showAlert("Please enter text first", "warning")
+        }
+        else{
         props.showAlert("Text is copied to Clipboard", "success")
+        }
     }
     const removeExtraSpace = ()=> {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
+        if (text === ""){
+          props.showAlert("Please enter text first", "warning")
+        }
+        else{
         props.showAlert("Extra spaces are removed from the text", "success")
+        }
     }
     const clearText = ()=>{
         setText("");
+        if (text === ""){
+          props.showAlert("Text is already cleared", "warning")
+        }
+        else{
         props.showAlert("Text is cleared", "success")
+        }
     }
     const[text, setText]=useState("")
   return (
