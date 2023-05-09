@@ -2,7 +2,7 @@ import React, { memo, useState } from "react";
 
 export default memo(function Textarea(props) {
   function spaceRemover(textToRemoveSpace){
-    let textArray = textToRemoveSpace.split(" ")
+    let textArray = textToRemoveSpace.split(/\s+/)
     let count = 0
     for ( let newText=0; newText< textArray.length; newText++) {
       if (textArray[newText] === "" ) {

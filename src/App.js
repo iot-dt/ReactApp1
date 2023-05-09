@@ -46,6 +46,7 @@ function App() {
     <>
     <Navbar appName="Word Editor" mode={mode} toggleMode={toggleModeFunction} setText={modeText}/>
       <Alert alert={alert}/>
+      <div className='container'>
       <Textarea showAlert={showAlert}/>
     {/* <Router>
       <Switch>
@@ -57,7 +58,7 @@ function App() {
           </Route> 
         </Switch>
     </Router> */}
-     
+     </div>
     </>
   );
 }
