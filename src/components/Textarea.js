@@ -96,12 +96,12 @@ export default memo(function Textarea(props) {
             </textarea>
         </div>
         <div>
-          <button className="btn btn-primary mx-3" onClick={changeToUppercase}>Change to Uppercase</button>
-          <button className="btn btn-primary mx-3" onClick={changeToLowercase}>Change to Lowercase</button>
-          <button className="btn btn-primary mx-3" onClick={capitalizeFirstLetter}>Capitalize First Letter</button>
-          <button className="btn btn-primary mx-3" onClick={copyText}>Copy text</button>
-          <button className="btn btn-primary mx-3" onClick={removeExtraSpace}>Remove Extra spaces</button>
-          <button className="btn btn-primary mx-3" onClick={clearText}>Clear Text</button>
+          <button className="btn btn-primary mx-3 my-2" onClick={changeToUppercase}>Change to Uppercase</button>
+          <button className="btn btn-primary mx-3 my-2" onClick={changeToLowercase}>Change to Lowercase</button>
+          <button className="btn btn-primary mx-3 my-2" onClick={capitalizeFirstLetter}>Capitalize First Letter</button>
+          <button className="btn btn-primary mx-3 my-2" onClick={copyText}>Copy text</button>
+          <button className="btn btn-primary mx-3 my-2" onClick={removeExtraSpace}>Remove Extra spaces</button>
+          <button className="btn btn-primary mx-3 my-2" onClick={clearText}>Clear Text</button>
         </div>
          <p className="my-2">word count = { text === "" ? 0 : spaceRemover(text)}</p>
          <p className="my-2">char count = {text.length}</p>
