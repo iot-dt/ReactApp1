@@ -5,6 +5,12 @@ import React from 'react'
 import './App.css';
 import { useState } from 'react';
 import Alert from './components/Alert';
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   // Link
+// } from "react-router-dom";
 
 function App() {
   const toggleModeFunction = () => {
@@ -38,10 +44,20 @@ function App() {
   const [modeText, setModetext] = useState("Enable Dark Mode");   
   return (
     <>
-      <Navbar appName="Word Editor" mode={mode} toggleMode={toggleModeFunction} setText={modeText}/>
+    <Navbar appName="Word Editor" mode={mode} toggleMode={toggleModeFunction} setText={modeText}/>
       <Alert alert={alert}/>
       <Textarea showAlert={showAlert}/>
-      {/* <About/> */}
+    {/* <Router>
+      <Switch>
+          <Route exact path="/about">
+          <About/>
+          </Route>
+          <Route exact path="/">
+            
+          </Route> 
+        </Switch>
+    </Router> */}
+     
     </>
   );
 }
